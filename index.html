@@ -10,6 +10,92 @@
     
     <style>
         /* =========================================
+           FAQ LAPIDADO - ESTILO LUXURY EDITORIAL
+           ========================================= */
+        #faq {
+            background-color: var(--white);
+        }
+
+        #faq .container {
+            max-width: 850px; /* Deixa o alinhamento centralizado e elegante */
+            margin: 0 auto;
+        }
+
+        details {
+            background: var(--sand); /* Fundo areia suave para acabar com o pálido */
+            margin-bottom: 20px;
+            padding: 24px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            border-left: 4px solid var(--gold); /* Linha dourada chique na lateral */
+            box-shadow: 0 4px 15px rgba(10, 61, 98, 0.03); /* Sombra leve e sutil */
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+        }
+
+        /* Efeito interativo premium ao passar o mouse */
+        details:hover {
+            background: #F4EFE3; /* Escurece o areia de forma sutil */
+            transform: translateY(-2px); /* Efeito flutuante de profundidade */
+            box-shadow: 0 12px 25px rgba(10, 61, 98, 0.08);
+        }
+
+        summary {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--ocean);
+            outline: none;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        summary::-webkit-details-marker { display: none; }
+        
+        /* O sinal de mais (+) elegante e dourado */
+        summary::after { 
+            content: '+'; 
+            color: var(--gold); 
+            font-size: 1.6rem; 
+            font-weight: 400;
+            transition: transform 0.3s ease;
+        }
+        
+        /* Quando a pergunta estiver aberta */
+        details[open] {
+            background: var(--white);
+            border-left-color: var(--turquoise); /* Muda para turquesa indicando abertura */
+            box-shadow: 0 10px 30px rgba(10, 61, 98, 0.06);
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid rgba(10, 61, 98, 0.1);
+            padding-bottom: 12px;
+            margin-bottom: 12px;
+        }
+
+        details[open] summary::after { 
+            content: '−'; /* Sinal de menos elegante */
+            color: var(--turquoise);
+            transform: rotate(180deg);
+        }
+
+        details p { 
+            color: #444; 
+            line-height: 1.8; 
+            font-size: 1.05rem; 
+            font-weight: 400;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+       
+        /* =========================================
            VARIÁVEIS DE COR - LUXURY TROPICAL
            ========================================= */
         :root {
@@ -781,7 +867,7 @@
         <div class="section-title">
             <h2>Dúvidas Frequentes</h2>
         </div>
-        <div style="max-width: 800px; margin: 0 auto;">
+        
             <details>
                 <summary>Preciso saber nadar para aproveitar?</summary>
                 <p>Não! Fornecemos flutuadores (macarrões) e coletes salva-vidas. Nossas paradas são feitas em águas rasas, calmas e cristalinas, perfeitas para todas as idades.</p>
