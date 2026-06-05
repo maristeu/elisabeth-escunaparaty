@@ -572,13 +572,21 @@
         .footer-links { margin: 20px 0; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
         .footer-links a { color: var(--gold); font-weight: 500;}
 
+       
         /* =========================================
            RESPONSIVIDADE MOBILE
            ========================================= */
         @media (max-width: 768px) {
-                        .nav-menu { display: none; } 
+            .nav-menu { display: none; } 
             .hero h1 { font-size: 2.5rem; }
-            .hero { padding-top: 100px; padding-bottom: 160px; } /* Ajuste fino e isolado para telas mobile */
+            
+            /* VALE POR DOIS: Ajusta o espaço do Anexo 2 e traz a escuna de volta pra foto! */
+            .hero { 
+                padding-top: 100px; 
+                padding-bottom: 90px; 
+                background-position: 85% center; 
+            }
+            
             section { padding: 45px 0; } /* Diminui drasticamente o espaço entre todas as seções no mobile (Anexo 3) */
             .destination-row, .destination-row:nth-child(even) { flex-direction: column; gap: 30px; }
             .dest-img { height: 250px; width: 100%; }
@@ -589,7 +597,6 @@
             .iframe-container { padding-top: 80%; }
             .special-card img.card-img-round { width: 150px; height: 150px; } /* Fixa o tamanho maior no celular */
         }
-
 
         
     </style>
