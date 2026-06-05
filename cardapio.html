@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio a Bordo - Escuna Paz e Amor</title>
+    <style>
+        :root {
+            --ocean: #0A3D62;
+            --gold: #D4AF37;
+            --white: #FFFFFF;
+            --sand: #F5F2E9;
+            --text-dark: #333333;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        
+        body { background-color: var(--sand); color: var(--text-dark); padding-bottom: 50px; }
+        
+        /* Cabeçalho do Cardápio */
+        .menu-header {
+            background-color: var(--ocean);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .menu-header h1 { font-size: 2rem; margin-bottom: 10px; color: var(--gold); }
+        .menu-header p { font-size: 1rem; opacity: 0.9; }
+
+        /* Estrutura do Menu */
+        .menu-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .menu-category {
+            margin-bottom: 40px;
+        }
+        
+        .menu-category h2 {
+            color: var(--ocean);
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Itens do Cardápio */
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 8px;
+        }
+        
+        .menu-item-name { font-weight: 600; font-size: 1.1rem; color: var(--text-dark); }
+        .menu-item-desc { font-size: 0.85rem; color: #666; display: block; margin-top: 3px; line-height: 1.4; }
+        .menu-item-price { font-weight: bold; color: var(--ocean); font-size: 1.1rem; white-space: nowrap; margin-left: 15px; }
+
+        /* Rodapé de Avisos */
+        .menu-footer-notes {
+            background-color: rgba(10, 61, 98, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+            margin-top: 40px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Botão Voltar */
+        .btn-back {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 40px auto 0;
+            text-align: center;
+            background-color: var(--gold);
+            color: var(--ocean);
+            padding: 15px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        .btn-back:hover { background-color: #b5952f; transform: translateY(-2px); }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .menu-item { flex-direction: column; align-items: flex-start; }
+            .menu-item-price { margin-left: 0; margin-top: 5px; color: var(--gold); }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="menu-header">
+        <h1>Cardápio a Bordo</h1>
+        <p>Experiência Gastronômica Escuna Paz e Amor I & II</p>
+    </header>
+
+    <div class="menu-container">
+        
+        <!-- PRATOS INDIVIDUAIS -->
+        <div class="menu-category">
+            <h2>Pratos Individuais</h2>
+            
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Filé de Peixe ao Molho de Camarão</span>
+                    <span class="menu-item-desc">Acompanha arroz, salada de legumes e farofa de dendê.</span>
+                </div>
+                <span class="menu-item-price">R$ 75,00</span>
+            </div>
+            
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Frango Grelhado</span>
+                    <span class="menu-item-desc">Acompanha arroz e salada de legumes.</span>
+                </div>
+                <span class="menu-item-price">R$ 75,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Strogonoff de Frango</span>
+                    <span class="menu-item-desc">Acompanha arroz e batata palha.</span>
+                </div>
+                <span class="menu-item-price">R$ 70,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Peito de Frango c/ Creme de Milho</span>
+                    <span class="menu-item-desc">Acompanha arroz e batata frita.</span>
+                </div>
+                <span class="menu-item-price">R$ 70,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Espaguete de Lula e Camarão</span>
+                </div>
+                <span class="menu-item-price">R$ 70,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Vegetariano</span>
+                    <span class="menu-item-desc">Feijão, legumes, salada, ovo cozido.</span>
+                </div>
+                <span class="menu-item-price">R$ 70,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Prato Kids Frango</span>
+                    <span class="menu-item-desc">Acompanha arroz, feijão, tiras de frango e fritas.</span>
+                </div>
+                <span class="menu-item-price">R$ 70,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Prato Kids Carne</span>
+                    <span class="menu-item-desc">Acompanha arroz, feijão, tiras de carne e fritas.</span>
+                </div>
+                <span class="menu-item-price">R$ 70,00</span>
+            </div>
+        </div>
+
+        <!-- PORÇÕES E SOBREMESAS -->
+        <div class="menu-category">
+            <h2>Porções & Sobremesas</h2>
+            
+            <div class="menu-item">
+                <div><span class="menu-item-name">Carne com Fritas (400g de Carne)</span></div>
+                <span class="menu-item-price">R$ 120,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div><span class="menu-item-name">Lula a Dorê</span></div>
+                <span class="menu-item-price">R$ 110,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div><span class="menu-item-name">Isca de Peixe</span></div>
+                <span class="menu-item-price">R$ 90,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div><span class="menu-item-name">Frango à Passarinho</span></div>
+                <span class="menu-item-price">R$ 85,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div><span class="menu-item-name">Isca de Frango</span></div>
+                <span class="menu-item-price">R$ 80,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Salada Paz e Amor</span>
+                    <span class="menu-item-desc">Palmito, alface, manga, abacaxi, azeitona, tomate e pepino.</span>
+                </div>
+                <span class="menu-item-price">R$ 55,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Salada Tradicional</span>
+                    <span class="menu-item-desc">Alface, tomate e pepino.</span>
+                </div>
+                <span class="menu-item-price">R$ 45,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div><span class="menu-item-name">Batata Frita</span></div>
+                <span class="menu-item-price">R$ 45,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div><span class="menu-item-name">Aipim Frito</span></div>
+                <span class="menu-item-price">R$ 45,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div><span class="menu-item-name">Porção de Arroz / Porção de Feijão</span></div>
+                <span class="menu-item-price">R$ 20,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Sobremesas</span>
+                    <span class="menu-item-desc">Brigadeiro • Beijinho • Mousse de Maracujá • Mousse de Limão</span>
+                </div>
+                <span class="menu-item-price">R$ 10,00</span>
+            </div>
+        </div>
+
+        <!-- DRINKS -->
+        <div class="menu-category">
+            <h2>Drinks</h2>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Drink Paz e Amor</span>
+                    <span class="menu-item-desc">Licor cremoso de côco com cachaça, concentrado de morango e limão, espuma de gengibre ou chantilly.</span>
+                </div>
+                <span class="menu-item-price">R$ 45,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Jorge Amado</span>
+                    <span class="menu-item-desc">Cachaça Gabriela, maracujá e limão.</span>
+                </div>
+                <span class="menu-item-price">R$ 45,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Tereza Batista</span>
+                    <span class="menu-item-desc">Licor de banana de Paraty, maracujá e limão.</span>
+                </div>
+                <span class="menu-item-price">R$ 45,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Caipivodka Mista (Smirnoff)</span>
+                    <span class="menu-item-desc">Sabores: Limão c/ Maracujá • Abacaxi c/ Hortelã • Limão c/ Maracujá e Manjericão • Kiwi c/ Abacaxi e Laranja • Morango.</span>
+                </div>
+                <span class="menu-item-price">R$ 45,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Coronita Frozen</span>
+                    <span class="menu-item-desc">Tequila, Cointreau, gelo, limão e Corona.</span>
+                </div>
+                <span class="menu-item-price">R$ 45,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Gin Tônica c/ RedBull</span>
+                </div>
+                <span class="menu-item-price">R$ 45,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Caipirinha Mista</span>
+                    <span class="menu-item-desc">Sabores: Limão c/ Maracujá • Limão c/ Maracujá e Manjericão • Abacaxi c/ Hortelã • Kiwi c/ Abacaxi e Laranja.</span>
+                </div>
+                <span class="menu-item-price">R$ 40,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Caipivodka</span>
+                    <span class="menu-item-desc">Sabores: Limão • Maracujá • Abacaxi • Kiwi.</span>
+                </div>
+                <span class="menu-item-price">R$ 40,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Spritz</span>
+                    <span class="menu-item-desc">Aperol, espumante, água com gás e laranja.</span>
+                </div>
+                <span class="menu-item-price">R$ 40,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Pinã Colada</span>
+                    <span class="menu-item-desc">Rum, leite condensado, leite de coco, coco e abacaxi.</span>
+                </div>
+                <span class="menu-item-price">R$ 40,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Espanhola</span>
+                    <span class="menu-item-desc">Vinho seco, leite condensado e abacaxi.</span>
+                </div>
+                <span class="menu-item-price">R$ 40,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Mojito</span>
+                    <span class="menu-item-desc">Rum, hortelã, limão e água com gás.</span>
+                </div>
+                <span class="menu-item-price">R$ 40,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Batida (Com ou Sem Álcool)</span>
+                    <span class="menu-item-desc">Sabores: Limão • Maracujá • Manga • Coco • Morango.</span>
+                </div>
+                <span class="menu-item-price">R$ 40,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Caipirinha (Cachaça Paratyense)</span>
+                    <span class="menu-item-desc">Sabores: Limão • Maracujá • Abacaxi • Kiwi.</span>
+                </div>
+                <span class="menu-item-price">R$ 35,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Caiçarinha</span>
+                    <span class="menu-item-desc">Cachaça Gabriela e limão.</span>
+                </div>
+                <span class="menu-item-price">R$ 35,00</span>
+            </div>
+        </div>
+
+        <!-- BEBIDAS -->
+        <div class="menu-category">
+            <h2>Bebidas</h2>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Suco Natural</span>
+                    <span class="menu-item-desc">Sabores: Limão • Maracujá • Abacaxi • Abacaxi c/ Hortelã • Morango • Laranja • Melancia • Melancia c/ Gengibre • Manga • Manga c/ Limão.</span>
+                </div>
+                <span class="menu-item-price">R$ 20,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Cerveja Long Neck</span>
+                    <span class="menu-item-desc">Heineken • Budweiser • Corona.</span>
+                </div>
+                <span class="menu-item-price">R$ 16,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Cerveja Lata</span>
+                    <span class="menu-item-desc">Skol • Brahma.</span>
+                </div>
+                <span class="menu-item-price">R$ 10,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <span class="menu-item-name">Refrigerante Lata</span>
+                    <span class="menu-item-desc">Coca-Cola • Guaraná • Fanta Laranja.</span>
+                </div>
+                <span class="menu-item-price">R$ 9,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div><span class="menu-item-name">Água com Gás</span></div>
+                <span class="menu-item-price">R$ 7,00</span>
+            </div>
+
+            <div class="menu-item">
+                <div><span class="menu-item-name">Água sem Gás</span></div>
+                <span class="menu-item-price">R$ 6,00</span>
+            </div>
+        </div>
+
+        <!-- AVISOS FINAIS -->
+        <div class="menu-footer-notes">
+            <p><strong>🤿 Aluguel de Equipamentos:</strong> Máscara, Snorkel ou Colete Recreativo por R$ 30,00.</p>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: #555;">* Cobramos 10% de Taxa de Serviço.<br>* Couvert Artístico: R$ 12,00 (Opcional).</p>
+        </div>
+
+        <a href="index.html" class="btn-back">⬅ Voltar para Reservas</a>
+
+    </div>
+
+</body>
+</html>
