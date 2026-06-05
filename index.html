@@ -907,14 +907,16 @@
     <script>
     function enviarReserva() {
 
-        // Pega os valores
+        function enviarReserva() {
+
+        // Pega os valores digitados pelo usuário no formulário
         const nome     = document.getElementById('res-nome').value.trim();
         const wa       = document.getElementById('res-wa').value.trim();
         const data     = document.getElementById('res-data').value;
         const passeio  = document.getElementById('res-passeio').value;
         const adultos  = document.getElementById('res-adultos').value || '0';
         const criancas = document.getElementById('res-criancas').value || '0';
-        const idades   = document.getElementById('res-idades').value.trim() || 'Sem crianças';
+        const idades   = document.getElementById('res-idades').value.trim() || 'Nenhuma';
         const obs      = document.getElementById('res-obs').value.trim() || 'Nenhuma';
 
         // Remove destaque de erro anterior
@@ -932,29 +934,36 @@
             return;
         }
 
-        // Formata a data para pt-BR
+        // Formata a data de forma amigável para pt-BR
         const dataFmt = new Date(data + 'T12:00:00').toLocaleDateString('pt-BR', {
             weekday: 'long', day: '2-digit', month: 'long', year: 'numeric'
         });
 
-        // Monta a mensagem final formatada para enviar ao WhatsApp (Idêntica ao pedido para o ícone)
+        // Monta a estrutura da mensagem LIMPA (sem a palavra "Consulte")
         const mensagem =
-`Olá!
-Gostaria de solicitar uma reserva.
-Nome: ${nome}
-Data: ${dataFmt}
-Passeio escolhido: ${passeio}
-Adultos: ${adultos}
-Crianças: ${criancas}
-Idades: ${idades}
-Observações: ${obs}
-Aguardo confirmação de disponibilidade.`;
+`Olá! Gostaria de verificar a disponibilidade para um passeio. ⛵
 
-        // Abre o WhatsApp com a mensagem formatada
+📋 *Dados para a reserva:*
+• Nome completo: ${nome}
+• Data do passeio: ${dataFmt}
+• Passeio escolhido: ${passeio}
+• Embarcação desejada: ${passeio}
+
+👥 *Quantidade de passageiros:*
+• Adultos: ${adultos}
+• Crianças (0 a 5 anos): ${criancas}
+• Crianças (6 a 10 anos): (Verificar idades)
+• Idades das crianças: ${idades}
+
+💬 *Observações ou restrições:*
+${obs}`;
+
+        // Abre o WhatsApp enviando a mensagem perfeitamente blocada
         const numero = '5524998372954';
         const url = 'https://wa.me/' + numero + '?text=' + encodeURIComponent(mensagem);
         window.open(url, '_blank');
     }
+    
     </script>
 </body>
 </html>
