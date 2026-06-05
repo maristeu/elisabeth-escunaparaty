@@ -406,26 +406,53 @@
         .roteiro-list li { margin-bottom: 10px; font-weight: 500; color: var(--ocean); display: flex; align-items: center; }
         .roteiro-list li::before { content: "📍"; margin-right: 10px; font-size: 1.2rem; }
 
+        /* =========================================
+           MINI GALERIA COM LEGENDA PREMIUM
+           ========================================= */
         .mini-gallery {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 12px;
             margin-bottom: 30px;
         }
-        .mini-gallery img {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
+        
+        .mini-item {
+            position: relative;
             border-radius: 8px;
+            overflow: hidden;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            aspect-ratio: 1 / 1;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: help;
         }
-        .mini-gallery img:hover {
-            transform: scale(1.1);
+        
+        .mini-item:hover {
+            transform: scale(1.1); /* Mantém aquele efeito lindo de zoom ao passar o mouse */
             box-shadow: 0 8px 15px rgba(0,0,0,0.2);
             z-index: 2;
-            position: relative;
+        }
+
+        .mini-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* O truque do degradê luxuoso com o texto */
+        .mini-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(10, 61, 98, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 30px 5px 8px; /* Dá espaço para o degradê sumir suavemente */
+            letter-spacing: 0.5px;
+            pointer-events: none; /* Garante que o mouse continue interagindo com a foto */
         }
 
         /* =========================================
@@ -737,11 +764,23 @@
                 
                 <div class="mini-gallery">
                     
-                    <img src="esc1-ilha-cocos.webp" alt="Ilha dos Cocos" title="Ilha dos Cocos">
-                    <img src="esc1-saco-velha.webp" alt="Praia Saco da Velha" title="Praia Saco da Velha">
-                    <img src="esc1-ilha-comprida.webp" alt="Ilha Comprida" title="Ilha Comprida">
-                    <img src="esc1-praia-lula.webp" alt="Praia da Lula" title="Praia da Lula">
+                    <div class="mini-item">
+                    <img src="foto1.webp" alt="Ilha dos Cocos">
+                    <span class="mini-caption">Ilha dos Cocos</span>
                 </div>
+                <div class="mini-item">
+                    <img src="foto2.webp" alt="Praia do Saco da Velha">
+                    <span class="mini-caption">Saco da Velha</span>
+                </div>
+                <div class="mini-item">
+                    <img src="foto3.webp" alt="Ilha Comprida">
+                    <span class="mini-caption">Ilha Comprida</span>
+                </div>
+                <div class="mini-item">
+                    <img src="foto4.webp" alt="Praia da Lula">
+                    <span class="mini-caption">Praia da Lula</span>
+                </div>
+            </div>
 
                 <p><strong>Valor:</strong> R$ 110,00 por pessoa</p>>
                 <br>
@@ -770,10 +809,21 @@
                 </ul>
 
                 <div class="mini-gallery">
+                    <div class="mini-item">
                     <img src="esc2-ilha-cocos.webp" alt="Ilha dos Cocos" title="Ilha dos Cocos">
+                        <span class="mini-caption">Ilha dos Cocos</span>
+                </div>
+                    <div class="mini-item">
                     <img src="esc2-praia-conceicao.webp" alt="Praia da Conceição" title="Praia da Conceição">
+                        <span class="mini-caption">Praia da Conceição</span>
+                </div>
+                    <div class="mini-item">
                     <img src="esc2-lagoa-azul.webp" alt="Lagoa Azul" title="Lagoa Azul">
-                    <img src="esc2-praia-lula.webp" alt="Praia da Lula" title="Praia da Lula">
+                        <span class="mini-caption">Praia da Conceição</span>
+                </div>
+                    <div class="mini-item">
+                    <img src="esc2-praia-lula.webp" alt="Lagoa Azul" title="Praia da Lula">
+                     <span class="mini-caption">Praia da Lula</span>   
                 </div>
 
                 <p><strong>Valor:</strong> R$ 130,00 por pessoa</p>
@@ -913,7 +963,7 @@
             
             <details>
                 <summary>Vocês alugam equipamentos de mergulho?</summary>
-                <p>Oferecemos macarrões flutuantes como cortesia para todos. Caso queira, temos serviço de aluguel de máscara com snorkel e coletes recreativos a bordo, além de fotógrafo profissional opcional para registrar seu dia!</p>
+                <p>Nós fornecemos espaguetes flutuantes gratuitos para todos os passageiros. Caso deseje explorar o fundo do mar, o colete salva-vidas é gratuito, e o aluguel do kit de máscara e snorkel custa R$ 30, além de fotógrafo profissional opcional para registrar seu dia!</p>
             </details>
             <details>
                 <summary>Qual a política de cancelamento?</summary>
