@@ -274,8 +274,9 @@
         .section-title h2 { font-size: 2.8rem; margin-bottom: 15px; }
         .section-title p { font-size: 1.1rem; color: #666; max-width: 700px; margin: 0 auto; }
 
-        /* =========================================
-           HERO CINEMATOGRÁFICO
+       
+            /* =========================================
+           HERO CINEMATOGRÁFICO (AJUSTADO MOBILE)
            ========================================= */
         .hero {
             position: relative;
@@ -286,9 +287,9 @@
             background: linear-gradient(to right, rgba(10, 61, 98, 0.8), rgba(10, 61, 98, 0.3)), 
                         url('hero-principal.webp') center/cover;
             color: var(--white);
-            padding-bottom: 50px;
+            padding-bottom: 120px; /* Aumentado para a onda não comer o texto no mobile */
         }
-
+        
         .hero-content { max-width: 850px; z-index: 2; position: relative; }
         .hero h1 { color: var(--white); font-size: 4rem; line-height: 1.1; margin-bottom: 25px; text-shadow: 0 4px 15px rgba(0,0,0,0.3); }
         .hero p { font-size: 1.3rem; font-weight: 300; margin-bottom: 40px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
@@ -338,14 +339,15 @@
         .special-card:hover { transform: translateY(-10px); }
         
         .special-card img.card-img-round {
-            width: 110px;
-            height: 110px;
+                        width: 150px; /* Aumentado de 110px para 150px conforme anexo 2 */
+            height: 150px; /* Aumentado de 110px para 150px conforme anexo 2 */
             margin-bottom: 20px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid var(--gold);
             box-shadow: 0 8px 15px rgba(0,0,0,0.1);
         }
+        
 
         /* =========================================
            MOMENTOS A BORDO (GALERIA)
@@ -572,8 +574,10 @@
            RESPONSIVIDADE MOBILE
            ========================================= */
         @media (max-width: 768px) {
-            .nav-menu { display: none; } 
+                        .nav-menu { display: none; } 
             .hero h1 { font-size: 2.5rem; }
+            .hero { padding-bottom: 140px; } /* Garante segurança total contra a onda */
+            section { padding: 45px 0; } /* Diminui drasticamente o espaço entre todas as seções no mobile (Anexo 3) */
             .destination-row, .destination-row:nth-child(even) { flex-direction: column; gap: 30px; }
             .dest-img { height: 250px; width: 100%; }
             .mini-gallery { grid-template-columns: repeat(2, 1fr); }
@@ -581,7 +585,11 @@
             .form-grid { grid-template-columns: 1fr; gap: 0; }
             .form-wrapper { padding: 30px; }
             .iframe-container { padding-top: 80%; }
+            .special-card img.card-img-round { width: 150px; height: 150px; } /* Fixa o tamanho maior no celular */
         }
+
+
+        
     </style>
 </head>
 <body id="home">
@@ -717,7 +725,7 @@
                     <img src="esc1-praia-lula.webp" alt="Praia da Lula" title="Praia da Lula">
                 </div>
 
-                <p><strong>Valor:</strong> A partir de R$ 150,00</p>
+                <p><strong>Valor:</strong> R$ 110,00 por pessoa</p>>
                 <br>
                 <a href="#reserva" class="btn-primary">Reservar Escuna I</a>
             </div>
@@ -746,7 +754,7 @@
                     <img src="esc2-praia-lula.webp" alt="Praia da Lula" title="Praia da Lula">
                 </div>
 
-                <p><strong>Valor:</strong> A partir de R$ 180,00</p>
+                <p><strong>Valor:</strong> R$ 130,00 por pessoa</p>
                 <br>
                 <a href="#reserva" class="btn-primary">Reservar Escuna II</a>
             </div>
@@ -898,6 +906,7 @@
                 <a href="https://www.instagram.com/escunapazeamoroficial/" target="_blank">Instagram @escunapazeamoroficial</a>
                 <a href="https://wa.me/5524998372954" target="_blank">WhatsApp (24) 99837-2954</a>
             </div>
+
             
             <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 Escuna Paz e Amor. Todos os direitos reservados. Turismo Seguro e Consciente.</p>
         </div>
