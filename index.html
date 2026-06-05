@@ -280,14 +280,16 @@
            ========================================= */
         .hero {
             position: relative;
-            height: 90vh;
-            min-height: 600px;
+            height: auto; /* Permite que a seção se ajuste perfeitamente no mobile */
+            min-height: 90vh;
             display: flex;
             align-items: center;
             background: linear-gradient(to right, rgba(10, 61, 98, 0.8), rgba(10, 61, 98, 0.3)), 
-                        url('hero-principal.webp') center/cover;
+                        url('hero-principal.webp') center/cover; /* Mantém sua foto leve em .webp */
             color: var(--white);
-            padding-bottom: 120px; /* Aumentado para a onda não comer o texto no mobile */
+            padding-top: 80px; /* 🌟 ESPAÇO DE SEGURANÇA para o texto não sumir sob o menu */
+            padding-bottom: 140px; /* Mantém a segurança contra a onda na parte inferior */
+        }
         }
         
         .hero-content { max-width: 850px; z-index: 2; position: relative; }
@@ -576,7 +578,7 @@
         @media (max-width: 768px) {
                         .nav-menu { display: none; } 
             .hero h1 { font-size: 2.5rem; }
-            .hero { padding-bottom: 140px; } /* Garante segurança total contra a onda */
+            .hero { padding-top: 100px; padding-bottom: 160px; } /* Ajuste fino e isolado para telas mobile */
             section { padding: 45px 0; } /* Diminui drasticamente o espaço entre todas as seções no mobile (Anexo 3) */
             .destination-row, .destination-row:nth-child(even) { flex-direction: column; gap: 30px; }
             .dest-img { height: 250px; width: 100%; }
@@ -898,7 +900,7 @@
     <!-- RODAPÉ -->
     <footer>
         <div class="container">
-            <div class="footer-logo">Paz e Amor</div>
+            <div class="footer-logo">Escuna Paz e Amor</div>
             <p>Cais Turístico de Paraty - Centro Histórico, Paraty - RJ</p>
             <p>A Única Escuna com Toboágua da Região.</p>
             
